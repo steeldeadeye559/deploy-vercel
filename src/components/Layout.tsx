@@ -159,12 +159,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="lg:ml-64">
+      {/* Main content wrapper */}
+      <div className="lg:pl-64">
         {/* Top header */}
-        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between h-20 px-6">
-            <div className="flex items-center">
+        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-10">
+          <div className="flex items-center justify-between h-20 px-4 sm:px-6">
+            <div className="flex items-center flex-1 min-w-0">
               <button
                 onClick={() => setIsSidebarOpen(true)}
                 className="lg:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -189,7 +189,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4 ml-4">
               {/* Theme Toggle */}
               <button
                 onClick={toggleDarkMode}
@@ -287,7 +287,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     alt={user?.name}
                     className="w-8 h-8 rounded-full object-cover"
                   />
-                  <ChevronDown className="w-4 h-4 ml-2 text-gray-400" />
+                  <ChevronDown className="w-4 h-4 ml-2 text-gray-400 hidden sm:block" />
                 </button>
 
                 {/* Profile Dropdown Menu */}
@@ -328,7 +328,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </header>
 
         {/* Main content area */}
-        <main className="p-6">
+        <main className="p-4 sm:p-6">
           <div className="animate-fade-in">
             {children}
           </div>

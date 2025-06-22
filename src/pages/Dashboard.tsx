@@ -80,15 +80,15 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-4 sm:space-y-6 animate-fade-in">
       {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white">
-        <div className="flex items-center justify-between">
+      <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-6 sm:p-8 text-white">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0">
           <div>
-            <h1 className="text-3xl font-bold mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2">
               Good {new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 18 ? 'Afternoon' : 'Evening'}!
             </h1>
-            <p className="text-primary-100 text-lg">
+            <p className="text-primary-100 text-base sm:text-lg">
               Welcome back to your Hospital Management Dashboard
             </p>
             <p className="text-primary-200 text-sm mt-1">
@@ -101,21 +101,21 @@ const Dashboard: React.FC = () => {
             </p>
           </div>
           <div className="hidden md:block">
-            <Activity className="w-24 h-24 text-primary-200" />
+            <Activity className="w-20 h-20 sm:w-24 sm:h-24 text-primary-200" />
           </div>
         </div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200">
           <div className="flex items-center">
             <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-xl">
-              <Users className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 dark:text-primary-400" />
             </div>
-            <div className="ml-4">
+            <div className="ml-3 sm:ml-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Patients</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white">{stats.totalPatients}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{stats.totalPatients}</p>
               <p className="text-sm text-primary-600 dark:text-primary-400 flex items-center mt-1">
                 <TrendingUp className="w-4 h-4 mr-1" />
                 {stats.patientsToday} today
@@ -124,14 +124,14 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200">
           <div className="flex items-center">
             <div className="p-3 bg-warning-100 dark:bg-warning-900/20 rounded-xl">
-              <AlertTriangle className="w-8 h-8 text-warning-600 dark:text-warning-400" />
+              <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-warning-600 dark:text-warning-400" />
             </div>
-            <div className="ml-4">
+            <div className="ml-3 sm:ml-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Critical Patients</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white">{stats.criticalPatients}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{stats.criticalPatients}</p>
               <p className="text-sm text-warning-600 dark:text-warning-400">
                 Require immediate attention
               </p>
@@ -139,14 +139,14 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200">
           <div className="flex items-center">
             <div className="p-3 bg-secondary-100 dark:bg-secondary-900/20 rounded-xl">
-              <Calendar className="w-8 h-8 text-secondary-600 dark:text-secondary-400" />
+              <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-secondary-600 dark:text-secondary-400" />
             </div>
-            <div className="ml-4">
+            <div className="ml-3 sm:ml-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Today's Appointments</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white">{stats.appointmentsToday}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{stats.appointmentsToday}</p>
               <p className="text-sm text-secondary-600 dark:text-secondary-400">
                 {stats.completedConsultations} completed
               </p>
@@ -154,14 +154,14 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200">
           <div className="flex items-center">
             <div className="p-3 bg-error-100 dark:bg-error-900/20 rounded-xl">
-              <Pill className="w-8 h-8 text-error-600 dark:text-error-400" />
+              <Pill className="w-6 h-6 sm:w-8 sm:h-8 text-error-600 dark:text-error-400" />
             </div>
-            <div className="ml-4">
+            <div className="ml-3 sm:ml-4">
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Low Stock Medicines</p>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white">{stats.lowStockMedicines}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{stats.lowStockMedicines}</p>
               <p className="text-sm text-error-600 dark:text-error-400">
                 Need restocking
               </p>
@@ -171,7 +171,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Today's Appointments */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
           <div className="p-6 border-b border-gray-200 dark:border-gray-700">
